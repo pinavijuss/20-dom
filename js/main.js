@@ -1,3 +1,5 @@
+/*
+
 let rezultatas = 0;
 
 const minusDOM = document.querySelector('.minus');
@@ -29,4 +31,25 @@ resetDOM.addEventListener('click', () => {
     numberDOM.innerText = rezultatas;
     h1DOM.innerText = initialH1Text;
     ulDOM.innerHTML += `<li>"Paspaudei reset ir dabartinis rezultatas yra ${numberDOM.innerText}."</li>`;
+})*/
+
+const buttonDOM = document.querySelector('button');
+const inputDOM = document.querySelector('input'//#message);
+const spanDOM = document.querySelector('span');
+const inputBgColorDOM = document.querySelector('#bg-color');
+const inputTextColorDOM = document.querySelector('#text-color');
+
+
+inputDOM.style.color = 'red';
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();
+    spanDOM.innerText = inputDOM.value;
+    inputDOM.value = '';
+    spanDOM.style.backgroundColor = inputBgColorDOM.value;
+    spanDOM.style.color = inputTextColorDOM.value;
+
+
+
+
 })
