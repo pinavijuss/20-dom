@@ -33,6 +33,8 @@ resetDOM.addEventListener('click', () => {
     ulDOM.innerHTML += `<li>"Paspaudei reset ir dabartinis rezultatas yra ${numberDOM.innerText}."</li>`;
 })*/
 
+/*
+
 const buttonDOM = document.querySelector('button');
 const inputDOM = document.querySelector('input'//#message);
 const spanDOM = document.querySelector('span');
@@ -53,3 +55,78 @@ buttonDOM.addEventListener('click', (event) => {
 
 
 })
+*/
+
+
+const customerDOM = document.querySelector('#customer');
+const orderDOM = document.querySelector('.order');
+const buttonDOM = document.querySelector('button');
+const sriubaDOM = document.querySelector('#sriuba');
+const patiekalasDOM = document.querySelector('#patiekalas');
+const desertasDOM = document.querySelector('#desertas');
+const gerimasDOM = document.querySelectorAll('input[name="gerimas"]');
+
+
+function arNoriu(DOM) {
+    return DOM.checked ? 'nori' : 'nenori';
+}
+
+function kurisPazymetas(DOMlist) {
+    for (const itemDOM of DOMlist) {
+        if (itemDOM.checked) {
+            return itemDOM.value;
+        }
+    }
+}
+
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    // function mealChecked(item) {
+    //     if (item.checked) {
+    //         return 'nori';
+    //     }
+    //     return 'nepasirinko';
+    // }
+
+
+    // function drinkChecked(item) {
+    //      for (let i = 0; i < item.length; i++)
+    //          if (item[i].checked) {
+    //              return item[i].value;
+    //         }
+
+
+
+
+
+    // }
+    // let customerName = '';
+    // if (customerDOM.value === '') {
+    //     customerName = 'nepateiktas'
+    // } else {
+    //     customerDOM.value
+    // }
+
+    const vardas = customerDOM.value.trim();
+    const pasirinktasGerimas = kurisPazymetas(gerimasDOM);
+    const sakinioPradzia = vardas ? 'vardu ' + vardas : 'nenudores vardo';
+    const sakinioPabaiga = pasirinktasGerimas ? pasirinktasGerimas + ' yra pasirinktas gerimas' : 'gerimo nepasirinko';
+
+    orderDOM.innerText = `Uzsakovas ${sakinioPradzia} ${arNoriu(sriubaDOM)} sriubos, ${arNoriu(patiekalasDOM)} pagrindinio patiekalo, ${arNoriu(desertasDOM)} deserto ir ${sakinioPabaiga}.`;
+})
+
+
+
+
+
+
+    // orderDOM.innerText = `Uzsakovas, kurio vardas ${customerName} ${customerDOM.value}, ${mealChecked(sriubaDOM)} sriubos,
+    //  ${mealChecked(patiekalasDOM)} pagrindinio patiekalo, ${mealChecked(desertasDOM)} deserto,
+    //   ${drinkChecked(gerimasDOM)} yra pasirinktas gerimas`;
+
+
+
+
+// Uzsakovas, kurio  nerastas arba kurio vardas Petras
