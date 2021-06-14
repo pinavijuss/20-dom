@@ -83,31 +83,31 @@ buttonDOM.addEventListener('click', (event) => {
 // buttonDOM.addEventListener('click', (event) => {
 //     event.preventDefault();
 
-// function mealChecked(item) {
-//     if (item.checked) {
-//         return 'nori';
-//     }
-//     return 'nepasirinko';
-// }
-
-
-// function drinkChecked(item) {
-//      for (let i = 0; i < item.length; i++)
-//          if (item[i].checked) {
-//              return item[i].value;
+//     function mealChecked(item) {
+//         if (item.checked) {
+//             return 'nori';
 //         }
+//         return 'nepasirinko';
+//     }
+
+
+//     function drinkChecked(item) {
+//         for (let i = 0; i < item.length; i++)
+//             if (item[i].checked) {
+//                 return item[i].value;
+//             }
 
 
 
 
 
-// }
-// let customerName = '';
-// if (customerDOM.value === '') {
-//     customerName = 'nepateiktas'
-// } else {
-//     customerDOM.value
-// }
+//     }
+//     let customerName = '';
+//     if (customerDOM.value === '') {
+//         customerName = 'nepateiktas'
+//     } else {
+//         customerDOM.value
+//     }
 
 
 
@@ -116,106 +116,257 @@ buttonDOM.addEventListener('click', (event) => {
 
 
 
-// orderDOM.innerText = `Uzsakovas, kurio vardas ${customerName} ${customerDOM.value}, ${mealChecked(sriubaDOM)} sriubos,
+//     orderDOM.innerText = `Uzsakovas, kurio vardas ${customerName} ${customerDOM.value}, ${mealChecked(sriubaDOM)} sriubos,
 //  ${mealChecked(patiekalasDOM)} pagrindinio patiekalo, ${mealChecked(desertasDOM)} deserto,
 //   ${drinkChecked(gerimasDOM)} yra pasirinktas gerimas`;
 
 
 
 
-// Uzsakovas, kurio  nerastas arba kurio vardas Petras
+//     Uzsakovas, kurio  nerastas arba kurio vardas Petras
 
-// const onePtsDOM = document.querySelector('[data-points=1]');
-// const twoPtsDom = document.querySelector('[data-points=2]');
-// const threePtsDOM = document.querySelector('[data-points=3]');
+//     const onePtsDOM = document.querySelector('[data-points=1]');
+//     const twoPtsDom = document.querySelector('[data-points=2]');
+//     const threePtsDOM = document.querySelector('[data-points=3]');
 
-// let homePoints = 0;
-// for (let i = 0; i < homeTeamPtsDOM.length; i++) {
+//     let homePoints = 0;
+//     for (let i = 0; i < homeTeamPtsDOM.length; i++) {
 
-//     const buttonPush = homeTeamPtsDOM[i];
-//     buttonPush.addEventListener('click', () => {
-//         homePoints += i + 1;
-//         homeTeamResultDOM.innertext = homePoints;
-//     })
-// }
-
-// const lentaDOM = document.querySelector('.lenta');
-// const homeTeamResultDOM = lentaDOM.querySelector('[data-komanda="namu"]');
-// const guestTeamResultDOM = lentaDOM.querySelector('[data-komanda="sveciu"]');
-// const aiksteleDOM = document.querySelector('.aikstele');
-
-// const homeTeamDOM = aiksteleDOM.querySelector('[data-komanda="namu"]');
-// const homeTeamPtsDOM = homeTeamDOM.querySelectorAll('button');
-
-// const guestTeamDOM = aiksteleDOM.querySelector('[data-komanda="sveciu"]');
-// const guestTeamPtsDOM = guestTeamDOM.querySelectorAll('button');
-
-// let namuRezultatas = 0;
-// let sveciuRezultatas = 0;
-
-// for (let i = 0; i < 3; i++) {
-//     guestTeamPtsDOM[i].addEventListener('click', () => {
-//         namuRezultatas += i + 1;
-//         namuRezultatasDOM.innerText = namuRezultatas;
-//     })
-// }
-
-// function generuotiLenta(selector, count) {
-//     const DOM = document.querySelector(selector);
-//     if (!DOM) {
-//         console.error('ERROR: nerastas elementas');
-//         return false;
+//         const buttonPush = homeTeamPtsDOM[i];
+//         buttonPush.addEventListener('click', () => {
+//             homePoints += i + 1;
+//             homeTeamResultDOM.innertext = homePoints;
+//         })
 //     }
 
-//     if (count < 0 ||
-//         count % 1 !== 0) {
-//         console.error('ERROR: skaicius turi buti teigiamas ir sveikasis');
-//         return false;
+//     const lentaDOM = document.querySelector('.lenta');
+//     const homeTeamResultDOM = lentaDOM.querySelector('[data-komanda="namu"]');
+//     const guestTeamResultDOM = lentaDOM.querySelector('[data-komanda="sveciu"]');
+//     const aiksteleDOM = document.querySelector('.aikstele');
+
+//     const homeTeamDOM = aiksteleDOM.querySelector('[data-komanda="namu"]');
+//     const homeTeamPtsDOM = homeTeamDOM.querySelectorAll('button');
+
+//     const guestTeamDOM = aiksteleDOM.querySelector('[data-komanda="sveciu"]');
+//     const guestTeamPtsDOM = guestTeamDOM.querySelectorAll('button');
+
+//     let namuRezultatas = 0;
+//     let sveciuRezultatas = 0;
+
+//     for (let i = 0; i < 3; i++) {
+//         guestTeamPtsDOM[i].addEventListener('click', () => {
+//             namuRezultatas += i + 1;
+//             namuRezultatasDOM.innerText = namuRezultatas;
+//         })
 //     }
+
+//     function generuotiLenta(selector, count) {
+//         const DOM = document.querySelector(selector);
+//         if (!DOM) {
+//             console.error('ERROR: nerastas elementas');
+//             return false;
+//         }
+
+//         if (count < 0 ||
+//             count % 1 !== 0) {
+//             console.error('ERROR: skaicius turi buti teigiamas ir sveikasis');
+//             return false;
+//         }
+
+//         let HTML = '';
+//         for (let i = 1; i <= count; i++) {
+//             HTML += `<div>${i}</div>`;
+//         }
+
+//         DOM.innerHTML = HTML;
+//     }
+
+//     generuotiLenta('.lenta', 8);
+
+
+
+
+
+
+
+
+
+
+// function renderNav() {
+
+//     const animalDOM = document.getElementById('animal');
+//     const buttonDOM = document.querySelector('button');
+//     const optionDOM = document.querySelector('.option');
 
 //     let HTML = '';
-//     for (let i = 1; i <= count; i++) {
-//         HTML += `<div>${i}</div>`;
-//     }
+//     for (const selectorItem of selectors) {
+//         HTML += `<option value="${selectorItem.value}">${selectorItem.title}</option>`;
 
-//     DOM.innerHTML = HTML;
+//     }
+//     animalDOM.innerHTML = HTML;
 // }
 
-// generuotiLenta('.lenta', 8);
+// const selectors = [
+//     {
+//         value: '',
+//         title: '--Please choose an option--'
+//     },
+//     {
+//         value: 'zuikis',
+//         title: 'Zuikis'
+//     },
+//     {
+//         value: '#',
+//         title: '
+//     },
+//     {
+//         value: '#',
+//         title: ''
+//     }
+// ];
 
 
-function generuotiSocials(selector, icons) {
-    if (selector === '' ||
-        typeof selector !== 'string') {
-        console.error('ERROR: netinkamas parametras');
-        return false;
+// renderNav('header', menu);
 
+
+
+
+
+
+
+
+
+
+// const animalDOM = document.getElementById('animal');
+// const buttonDOM = document.querySelector('button');
+// const optionDOM = document.querySelector('.option');
+
+// const selectors = [
+//     {
+//         value: '',
+//         title: '--Please choose an option--'
+//     },
+//     {
+//         value: 'zuikis',
+//         title: 'Zuikis'
+//     },
+//     {
+//         value: 'barsukas',
+//         title: 'Barsukas'
+//     },
+//     {
+//         value: 'lape',
+//         title: 'Lape'
+//     },
+//     {
+//         value: 'vilkas',
+//         title: 'Vilkas'
+//     },
+//     {
+//         value: 'sernas',
+//         title: 'Sernas'
+//     },
+//     {
+//         value: 'vovere',
+//         title: 'Vovere'
+//     }
+// ];
+
+
+// let HTML = '';
+// for (const selectorItem of selectors) {
+//     HTML += `<option value="${selectorItem.value}">${selectorItem.title}</option>`;
+
+// }
+// animalDOM.innerHTML = HTML;
+
+// buttonDOM.addEventListener('click', (event) => {
+//     event.preventDefault();
+
+//     optionDOM.innerText = animalDOM.value + '.';
+
+
+
+// });
+
+
+
+
+
+
+
+// debugger;
+
+// const a = 5;
+// const b = 8;
+// const c = -7;
+// const d = 11;
+
+// function sum(x, y) {
+//     x *= 2;
+//     y += 5;
+//     return x + y;
+// }
+
+// const ats1 = sum(a, b);
+// const ats2 = sum(c, d);
+
+// for (let i = 0; i < 5; i++) {
+//     console.log(i);
+
+// }
+
+const boardParametersDOM = document.querySelector('.option');
+const buttonDOM = document.querySelector('button');
+const inputDOM = document.querySelector('#board');
+const boardDOM = document.querySelector('.board');
+
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();
+    const n = parseInt(inputDOM.value);
+    boardParametersDOM.innerText = n + 'x' + n;
+    // boardSizeDOM.innerText = `${inputDOM.value} x ${inputDOM.value}`;
+    generateBoard(boardDOM, n);
+
+})
+
+function generateBoard(boardElement, boardSize) {
+    const rowSize = getRowSize(boardSize);
+    let linesHTML = '';
+    for (let i = 0; i < boardSize; i++) {
+        linesHTML += `<div class="row ${getEvenOrOddClass(i)}" style ="height: ${rowSize}%;">${getCell(boardSize)}</div>`;
     }
-    if (!Array.isArray(icons) ||
-        icons.lenght === 0) {
-        console.error('ERROR: negali buti tuscias array');
-        return false;
+
+    boardElement.innerHTML = linesHTML;
+}
+
+function getCell(boardSize) {
+    const rowSize = getRowSize(boardSize);
+    let cellsHTML = '';
+    for (let i = 0; i < boardSize; i++) {
+        cellsHTML += `<span class='cell ${getEvenOrOddClass(i)}' style ="width: ${rowSize}%;"></span>`;
     }
 
-    const iconsDOM = document.querySelector(selector);
+    return cellsHTML;
+}
 
-    let HTML = '';
-    for (let i = 0; i < icons.length; i++) {
-        if (typeof icons[i] !== 'string' ||
-            icons[i] === '') {
-            console.error('ERROR: netinkamas parametras');
-        } else
+function getRowSize(boardSize) {
+    return 100 / boardSize;
+}
 
-            HTML += `<i class="fa fa-${icons[i]}"></i>`;
-        console.log(icons);
+function getEvenOrOddClass(index) {
+    if (index % 2 === 0) {
+        return 'even';
+    } else {
+        return 'odd'
     }
-
-    iconsDOM.innerHTML = HTML;
-
 }
 
 
+// Pagal pasirinkta lentos dydi, reikia sugeneruoti
+// reikiama kieki.row elementu.
+// Atsizvelgiant i ju kieki, kiekvienos eilutes dydis turi buti tinkamas, jog visos tilptu i tevini elementa.board
 
-const icons = ['facebook', 'twitter', 5, [], '', 'linkedin', 'pinterest'];
 
-generuotiSocials('.socials', icons);
+
