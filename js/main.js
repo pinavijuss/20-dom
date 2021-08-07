@@ -316,52 +316,52 @@ buttonDOM.addEventListener('click', (event) => {
 
 // }
 
-const boardParametersDOM = document.querySelector('.option');
-const buttonDOM = document.querySelector('button');
-const inputDOM = document.querySelector('#board');
-const boardDOM = document.querySelector('.board');
+// const boardParametersDOM = document.querySelector('.option');
+// const buttonDOM = document.querySelector('button');
+// const inputDOM = document.querySelector('#board');
+// const boardDOM = document.querySelector('.board');
 
 
-buttonDOM.addEventListener('click', (event) => {
-    event.preventDefault();
-    const n = parseInt(inputDOM.value);
-    boardParametersDOM.innerText = n + 'x' + n;
-    // boardSizeDOM.innerText = `${inputDOM.value} x ${inputDOM.value}`;
-    generateBoard(boardDOM, n);
+// buttonDOM.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     const n = parseInt(inputDOM.value);
+//     boardParametersDOM.innerText = n + 'x' + n;
+//     // boardSizeDOM.innerText = `${inputDOM.value} x ${inputDOM.value}`;
+//     generateBoard(boardDOM, n);
 
-})
+// })
 
-function generateBoard(boardElement, boardSize) {
-    const rowSize = getRowSize(boardSize);
-    let linesHTML = '';
-    for (let i = 0; i < boardSize; i++) {
-        linesHTML += `<div class="row ${getEvenOrOddClass(i)}" style ="height: ${rowSize}%;">${getCell(boardSize)}</div>`;
-    }
+// function generateBoard(boardElement, boardSize) {
+//     const rowSize = getRowSize(boardSize);
+//     let linesHTML = '';
+//     for (let r = 0; r < boardSize; r++) {
+//         linesHTML += `<div class="row ${getEvenOrOddClass(r)}" style ="height: ${rowSize}%;">${getCell(boardSize)}</div>`;
+//     }
 
-    boardElement.innerHTML = linesHTML;
-}
+//     boardElement.innerHTML = linesHTML;
+// }
 
-function getCell(boardSize) {
-    const rowSize = getRowSize(boardSize);
-    let cellsHTML = '';
-    for (let i = 0; i < boardSize; i++) {
-        cellsHTML += `<span class='cell ${getEvenOrOddClass(i)}' style ="width: ${rowSize}%;"></span>`;
-    }
+// function getCell(boardSize) {
+//     const rowSize = getRowSize(boardSize);
+//     let cellsHTML = '';
+//     for (let c = 0; c < boardSize; c++) {
+//         cellsHTML += `<span class='cell ${getEvenOrOddClass(c)}' style ="width: ${rowSize}%;"></span>`;
+//     }
 
-    return cellsHTML;
-}
+//     return cellsHTML;
+// }
 
-function getRowSize(boardSize) {
-    return 100 / boardSize;
-}
+// function getRowSize(boardSize) {
+//     return 100 / boardSize;
+// }
 
-function getEvenOrOddClass(index) {
-    if (index % 2 === 0) {
-        return 'even';
-    } else {
-        return 'odd'
-    }
-}
+// function getEvenOrOddClass(index) {
+//     if (index % 2 === 0) {
+//         return 'even';
+//     } else {
+//         return 'odd'
+//     }
+// }
 
 
 // Pagal pasirinkta lentos dydi, reikia sugeneruoti
@@ -370,3 +370,89 @@ function getEvenOrOddClass(index) {
 
 
 
+// console'je reikia isspausdinti visus galimus laiko variantus paroje, kai norima
+//  atvaizduoti valandas ir minutes; kai minutes yra skaiciuojamos 15min tikslumus
+
+// Laukiamias rezultatas, pvz.: 0: 0 0: 15 0: 30 0: 45 1: 0 
+// 1: 15 1: 30 1: 45 2: 0 2: 15 2: 30 2: 45 ... 23: 0 23: 15 23: 30 23: 45
+
+
+
+
+
+// let minutesInterval = 15;
+// let time = [];
+// let startTime = 0;
+
+
+// for (let i = 0; startTime < 24 * 60; i++) {
+
+//     let hh = Math.floor(startTime / 60);
+//     let mm = startTime % 60;
+//     time[i] = ("0" + (hh % 12)).slice(-2) + ':' + ("0" + mm).slice(-2);
+//     time = time + minutesInterval;
+
+// }
+// console.log(time);
+
+// let minutes = 
+
+// function time(hours, minutes) {
+
+//     for (let h = 0; h < 24; h++) {
+//         for (let m = 0; m < 4; m++) {
+
+
+//             console.log(`${h}:${m * 15}`);
+//         }
+
+
+//     }
+// }
+
+// time(24, 15);
+
+
+// function time(hours, minutes) {
+//     for (let h = 0; h < hours; h++) {
+
+//         for (let m = 0; m < minutes; m++) {
+//             console.log(`${h}:${m}`);
+//         }
+//     }
+// }
+// time(4, 35);
+
+
+function time(timeFrom, timeTo, interval) {
+    let changedTimeTo = timeTo;
+    if (timeFrom > timeTo) {
+        changedTimeTo = 24 + timeTo;
+    }
+
+    //     const lessonsCount = Math.floor((timeTo - timeFrom) * 60 / interval);
+
+    // }
+    // console.log(lessonsCount + 1);
+
+    for (let i = timeFrom * 60; i <= changedTimeTo * 60; i += interval) {
+
+        const h = Math.floor(i / 60);
+        const m = i - (h * 60);
+        const hMod = h % 24;
+        console.log(i, `${hMod % 24 < 10 ? '0' + hMod : hMod}:${m < 10 ? '0' + m : m}`);
+
+    }
+}
+
+
+time(22, 6, 45);
+
+
+
+/*
+
+
+
+
+*/

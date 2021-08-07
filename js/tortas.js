@@ -1,0 +1,18 @@
+// Sventeje dalyvauja x zmoniu ir turima y tortu
+
+// Jei kiekvienas zmogus turi gauti po identisko dydzio torto gabala
+// ir kiekvienas tortas yra identiskas ir sveria z kilogramu
+
+// Kiek gramu torto klius kiekvienam zmogui ? Reikia suapvalinti i zemesne puse
+
+function tortoGabalas(tortuKiekis, zmoniuKiekis, tortoSvoris) {
+
+
+    const zmoniuPerTorta = Math.ceil(zmoniuKiekis / tortuKiekis);
+    return Math.floor(tortoSvoris / zmoniuPerTorta * 1000);
+}
+
+console.log(tortoGabalas(3, 17, 1));
+
+
+
